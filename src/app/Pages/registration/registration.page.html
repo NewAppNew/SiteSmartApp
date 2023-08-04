@@ -1,0 +1,265 @@
+
+<ion-header>
+  <ion-toolbar>
+  <ion-item lines="none">    
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" class="img2"/>
+  </ion-item>
+  <ion-title style="text-align:center;margin-bottom:30px">Create your account!</ion-title>
+<ion-segment 
+value="Individual" 
+color="tertiary" 
+scrollable="true"
+mode="ios"
+[(ngModel)]="segmentModel" 
+(ionChange)="segmentChanged($event)">
+  <ion-segment-button value="Individual">
+    <ion-label text-wrap>Individual</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="company">
+    <ion-label text-wrap>Company</ion-label>
+  </ion-segment-button>
+</ion-segment>
+</ion-toolbar>
+</ion-header>
+<ion-content  *ngIf="segmentModel === 'Individual'">
+<form [formGroup]="form" (submit)="save()"  > 
+    <ion-accordion-group>
+    <ion-accordion value="shapes">
+      <ion-item slot="header"  class="rmenu">
+        <ion-icon class="icon-reg" name="person"></ion-icon>
+        <ion-label>Personal Details</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Name"  required formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address1"  formControlName="address1" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address2"  formControlName="address2"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address3" formControlName="address3"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Mobile number" formControlName="mobile_number"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="email" placeholder="Email ID"  formControlName="email_id" required></ion-input>
+          </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>  
+  <ion-accordion-group>
+    <ion-accordion value="shapes">
+      <ion-item slot="header" lines="none"   class="rmenu">
+        <ion-icon name="planet" class="icon-reg"></ion-icon>
+        <ion-label>Company Details</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+        <ion-item class="inputm">
+          <ion-input type="text" placeholder="Website"  formControlName="website" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input type="text" placeholder="Director name" formControlName="director_name" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Director mobile" formControlName="director_mobile"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Director email id"  formControlName="director_email_id" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input type="text" placeholder="Type of industry"   formControlName="type_of_industry" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="GST"  formControlName="gst" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input type="text" placeholder="PAN"  formControlName="pan" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input type="text" placeholder="TAN"  formControlName="tan" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>  
+  <ion-accordion-group>
+    <ion-accordion value="shapes">
+      <ion-item slot="header"  class="rmenu">
+        <ion-icon name="eye" class="icon-reg"></ion-icon>
+        <ion-label>Credentials</ion-label>
+      </ion-item>
+      <ion-list slot="content">
+
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="User Name"  formControlName="username" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input name="password" type="{{type}}"  formControlName="password" placeholder="Password"  required></ion-input>
+          <ion-icon name="eye-outline"  *ngIf="!showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+          <ion-icon name="eye-off-outline"  *ngIf="showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input name="password" type="{{type}}"    placeholder="Confirm Password"  formControlName="password"  required></ion-input>
+          <ion-icon name="eye-outline"  *ngIf="!showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+          <ion-icon name="eye-off-outline"  *ngIf="showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>  
+  <div padding>
+    <ion-button icon-left size="medium"   type="submit" expand="full" shape="round" color="primary"  tappable>
+
+  Register</ion-button>
+  </div>
+</form> 
+  <ion-item lines="none" style="text-align:center">
+    <ion-label class="all"> Already Register ?</ion-label>
+    <ion-button icon-left size="medium" (click)="login()"  expand="full" shape="round" color="primary" tappable>
+      Login</ion-button>
+  </ion-item>
+
+</ion-content>
+
+
+
+
+    <ion-content *ngIf="segmentModel === 'company'" style="--background:rgba(242,243,245,255)">
+      <form [formGroup]="comform" (submit)="companySave()"  > 
+            <ion-accordion-group>
+            <ion-accordion value="shapes">
+              <ion-item slot="header"  class="rmenu">
+                <ion-icon class="icon-reg" name="person"></ion-icon>
+                <ion-label>Personal Details</ion-label>
+              </ion-item>
+      <ion-list slot="content">
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Name"  required formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address1"  formControlName="address1" required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address2"  formControlName="address2"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Address3" formControlName="address3"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="text" placeholder="Mobile number" formControlName="mobile_number"  required></ion-input>
+        </ion-item>
+        <ion-item class="inputm">
+          <ion-input  type="email" placeholder="Email ID"  formControlName="email_id" required></ion-input>
+          </ion-item>
+      </ion-list>
+
+            </ion-accordion>
+          </ion-accordion-group>  
+          <ion-accordion-group>
+            <ion-accordion value="shapes">
+              <ion-item slot="header" lines="none" class="rmenu">
+                <ion-icon name="planet" class="icon-reg"></ion-icon>
+                <ion-label>Company Details</ion-label>
+              </ion-item>
+             
+              <ion-list slot="content">
+                  <ion-item *ngFor="let control of myForm.controls | keyvalue"  class="inputm">
+                    <table>
+                      <tr>
+                        <td>
+                          <ion-icon name="add-circle-outline"  (click)="addControl()" slot="end"></ion-icon>
+                          <ion-icon (click)="removeControl(control)" name="close-circle"></ion-icon>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <ion-input
+                            required
+                            type="text"
+                            placeHolder="Contact person"
+                            formControlName="contact_person_designation"
+                          ></ion-input>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <ion-input
+                          required
+                          type="text"
+                          formControlName="contact_person_designation"
+                          placeHolder="Designation"
+                        ></ion-input>
+                        </td>
+                      </tr>
+                    </table>
+                   
+                </ion-item>
+
+                <ion-item class="inputm">
+                  <ion-input type="text" placeholder="Website"  formControlName="website" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input type="text" placeholder="Director name" formControlName="director_name" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input  type="text" placeholder="Director mobile" formControlName="director_mobile"  required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input  type="text" placeholder="Director email id"  formControlName="director_email_id" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input type="text" placeholder="Type of industry"   formControlName="type_of_industry" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input  type="text" placeholder="GST"  formControlName="gst" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input type="text" placeholder="PAN"  formControlName="pan" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input type="text" placeholder="TAN"  formControlName="tan" required></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-accordion>
+          </ion-accordion-group>  
+          <ion-accordion-group>
+            <ion-accordion value="shapes">
+              <ion-item slot="header" class="rmenu">
+                <ion-icon name="eye" class="icon-reg"></ion-icon>
+                <ion-label>Credentials</ion-label>
+              </ion-item>
+              <ion-list slot="content">
+
+                <ion-item class="inputm">
+                  <ion-input  type="text" placeholder="User Name"  formControlName="username" required></ion-input>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input name="password" type="{{type}}"  formControlName="password" placeholder="Password"  required></ion-input>
+                  <ion-icon name="eye-outline"  *ngIf="!showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+                  <ion-icon name="eye-off-outline"  *ngIf="showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+                </ion-item>
+                <ion-item class="inputm">
+                  <ion-input name="password" type="{{type}}"    placeholder="Confirm Password"  formControlName="password"  required></ion-input>
+                  <ion-icon name="eye-outline"  *ngIf="!showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+                  <ion-icon name="eye-off-outline"  *ngIf="showPass" (click)="showPassword()" class="icon-reg"></ion-icon>
+                </ion-item>
+              </ion-list>
+            </ion-accordion>
+          </ion-accordion-group>  
+          <div padding>
+            <ion-button icon-left size="medium"   type="submit" expand="full" shape="round" color="primary" tappable>
+
+          Register</ion-button>
+          </div>
+        </form> 
+
+          <ion-item lines="none" style="text-align:center">
+            <ion-label  class="all"> Already Register ?</ion-label>
+            <ion-button icon-left size="medium" (click)="login()"  expand="full" shape="round" color="primary" tappable>
+              Login</ion-button>
+          </ion-item>
+    </ion-content>
+

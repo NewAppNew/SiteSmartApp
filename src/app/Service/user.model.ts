@@ -1,0 +1,19 @@
+export interface User{
+    id?:string;
+    name?:string;
+    address1?:string;
+    address2?:string;
+    address3?:string;
+    mobile_number?:string;
+    email_id?:string;
+    website?:string;
+    director_name?:string;
+    director_mobile?:string;
+    director_email_id?:string;
+    type_of_industry?:string;
+    gst?:string;
+    tan?:string;
+    pan?:string;
+    username?:string;
+    password?:string;   
+}

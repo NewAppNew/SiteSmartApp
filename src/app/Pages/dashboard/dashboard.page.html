@@ -1,0 +1,380 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="signout()">
+          <ion-icon slot="icon-only" class="logout" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment 
+value="orders" 
+color="tertiary" 
+scrollable="true"
+mode="ios"
+[(ngModel)]="segmentModel" 
+(ionChange)="segmentChanged($event)">
+  <ion-segment-button value="orders">
+    <ion-label text-wrap>All Orders</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="quotaion">
+    <ion-label text-wrap>Quotation</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="po">
+    <ion-label text-wrap>PO</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  *ngIf="segmentModel === 'orders'">
+  <div class="input-group mb-4">  
+    <input type="search" placeholder="Search here..." aria-describedby="button-addon5" class="form-control">  
+    <div class="input-group-append">  
+      <button id="button-addon5" type="submit" class="btn btn-primary"> <i class="fa fa-search"> </i> </button>  
+    </div>  
+  </div>  
+  <ion-list>
+   
+    <ion-item  (click)="order()">
+      <table width="100%" style="margin-bottom:10px;margin-top:10px">
+        <tr>
+          <td  width="20%" rowspan="2">
+            <img src="assets/icon/cut.jpg" class="menuicon"/>
+          </td>
+          <td  width="50%" style="text-align:left;font-size:14px;font-weight:bold">     
+            Bending
+          </td>
+          <td  width="30%" rowspan="2" style="color:#BEBEBE;text-align:center;font-size:12px">     
+           24 Jan 
+          </td>
+        </tr>
+        <tr>
+          <td  width="60%" style="text-align:left;color:#BEBEBE;">     
+            <ion-label>Bending Process </ion-label> 
+          </td>
+        </tr>
+      </table> 
+    </ion-item>
+    <ion-item  (click)="order()">
+      <table width="100%" style="margin-bottom:10px;margin-top:10px">
+        <tr>
+          <td  width="20%" rowspan="2">
+            <img src="assets/icon/cut.jpg" class="menuicon"/>
+          </td>
+          <td  width="50%" style="text-align:left;font-size:14px;font-weight:bold">     
+            Bending
+          </td>
+          <td  width="30%" rowspan="2" style="color:#BEBEBE;text-align:center;font-size:12px">     
+           24 Jan 
+          </td>
+        </tr>
+        <tr>
+          <td  width="60%" style="text-align:left;color:#BEBEBE;">     
+            <ion-label>Bending Process </ion-label> 
+          </td>
+        </tr>
+      </table> 
+    </ion-item>
+    <ion-item  (click)="order()">
+      <table width="100%" style="margin-bottom:10px;margin-top:10px">
+        <tr>
+          <td  width="20%" rowspan="2">
+            <img src="assets/icon/cut.jpg" class="menuicon"/>
+          </td>
+          <td  width="50%" style="text-align:left;font-size:14px;font-weight:bold">     
+            Bending
+          </td>
+          <td  width="30%" rowspan="2" style="color:#BEBEBE;text-align:center;font-size:12px">     
+           24 Jan 
+          </td>
+        </tr>
+        <tr>
+          <td  width="60%" style="text-align:left;color:#BEBEBE;">     
+            <ion-label>Bending Process </ion-label> 
+          </td>
+        </tr>
+      </table> 
+    </ion-item>
+    <ion-item  (click)="order()">
+      <table width="100%" style="margin-bottom:10px;margin-top:10px">
+        <tr>
+          <td  width="20%" rowspan="2">
+            <img src="assets/icon/cut.jpg" class="menuicon"/>
+          </td>
+          <td  width="50%" style="text-align:left;font-size:14px;font-weight:bold">     
+            Bending details
+          </td>
+          <td  width="30%" rowspan="2" style="color:#BEBEBE;text-align:center;font-size:12px">     
+           24 Jan 
+          </td>
+        </tr>
+        <tr>
+          <td  width="60%" style="text-align:left;color:#BEBEBE;">     
+            <ion-label>Bending Process </ion-label> 
+          </td>
+        </tr>
+      </table> 
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button><ion-icon name="chevron-up-circle-outline"></ion-icon></ion-fab-button>
+    <ion-icon name="logo-facebook" class="social" style="margin-right:10px"  slot="end"></ion-icon>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-linkedin"></ion-icon></ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  </ion-content>
+  
+  
+  
+  
+      <ion-content *ngIf="segmentModel === 'quotaion'">
+          <ion-item lines="none"class="orderhead">
+            <ion-lable>  All Quotation Generation </ion-lable>
+          </ion-item>
+          <div class="input-group mb-4">  
+            <input type="search" placeholder="Search here..." aria-describedby="button-addon5" class="form-control">  
+            <div class="input-group-append">  
+              <button id="button-addon5" type="submit" class="btn btn-primary"> <i class="fa fa-search"> </i> </button>  
+            </div>  
+          </div>  
+  
+          <ion-card>
+            <ion-item>
+            <table>
+              <tr height="30px">
+                <td>
+                  <ion-label class="color" position="fixed">Date</ion-label>
+                </td>
+                <td>
+                  <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+                </td>
+              </tr>
+              <tr height="30px">
+                <td>
+                  <ion-label class="color" position="fixed">File Name</ion-label>
+                </td>
+                <td>
+                  <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+                </td>
+              </tr>
+            </table>
+          </ion-item>
+      </ion-card>
+  
+      <ion-card>
+        <table>
+          <tr height="30px">
+            <td>
+              <ion-label class="color" position="fixed">Date</ion-label>
+            </td>
+            <td>
+              <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+            </td>
+          </tr>
+          <tr height="30px">
+            <td>
+              <ion-label class="color" position="fixed">File Name</ion-label>
+            </td>
+            <td>
+              <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+            </td>
+          </tr>
+        </table>
+  </ion-card>
+  
+  <ion-card>
+    <table>
+      <tr height="30px">
+        <td>
+          <ion-label class="color" position="fixed">Date</ion-label>
+        </td>
+        <td>
+          <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+        </td>
+      </tr>
+      <tr height="30px">
+        <td>
+          <ion-label class="color" position="fixed">File Name</ion-label>
+        </td>
+        <td>
+          <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+        </td>
+      </tr>
+    </table>
+  </ion-card>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button><ion-icon name="chevron-up-circle-outline"></ion-icon></ion-fab-button>
+    <ion-icon name="logo-facebook" class="social" style="margin-right:10px"  slot="end"></ion-icon>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-linkedin"></ion-icon></ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+      </ion-content>
+  
+  
+  
+      <ion-content *ngIf="segmentModel === 'po'">
+         
+          <ion-card>
+            <ion-item lines="none" class="orderhead">
+              <ion-lable>  PO Generation </ion-lable>
+            </ion-item>
+            <table width="100%">
+              <tr height="40px">
+                <td  width="30%">
+                  <ion-label class="color" position="fixed">Date</ion-label>
+                </td>
+                <td  width="70%">
+                  <input type="date" class="datepicker-input">
+                </td>
+              </tr>
+              <tr height="40px">
+                <td  width="30%">
+                  <ion-label class="color" position="fixed">Upload</ion-label>
+                </td>
+                <td  width="70%">
+                  <input id="input-b2"  name="input-b2" type="file" class="file" data-show-preview="false">
+                </td>
+              </tr>
+            </table>
+            <div padding>
+              <ion-button icon-left size="medium" (click)="qt()"  expand="full" shape="round" color="primary" tappable>
+                Generate PO
+             </ion-button>    </div>  
+
+            </ion-card>
+            <ion-item lines="none"class="orderhead">
+              <ion-lable>  All PO Generation </ion-lable>
+            </ion-item>
+            <div class="input-group mb-4">  
+              <input type="search" placeholder="Search here..." aria-describedby="button-addon5" class="form-control">  
+              <div class="input-group-append">  
+                <button id="button-addon5" type="submit" class="btn btn-primary"> <i class="fa fa-search"> </i> </button>  
+              </div>  
+            </div>  
+            <ion-card>
+              <table>
+                <tr height="30px">
+                  <td>
+                    <ion-label class="color" position="fixed">Date</ion-label>
+                  </td>
+                  <td>
+                    <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+                  </td>
+                </tr>
+                <tr height="30px">
+                  <td>
+                    <ion-label class="color" position="fixed">File Name</ion-label>
+                  </td>
+                  <td>
+                    <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+                  </td>
+                </tr>
+              </table>
+        </ion-card>
+        <ion-card>
+          <table>
+            <tr height="30px">
+              <td>
+                <ion-label class="color" position="fixed">Date</ion-label>
+              </td>
+              <td>
+                <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+              </td>
+            </tr>
+            <tr height="30px">
+              <td>
+                <ion-label class="color" position="fixed">File Name</ion-label>
+              </td>
+              <td>
+                <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+              </td>
+            </tr>
+          </table>
+    </ion-card>
+    <ion-card>
+      <table>
+        <tr height="30px">
+          <td>
+            <ion-label class="color" position="fixed">Date</ion-label>
+          </td>
+          <td>
+            <ion-label  class="colortd" position="fixed"> 12-Jan-2022</ion-label>
+          </td>
+        </tr>
+        <tr height="30px">
+          <td>
+            <ion-label class="color" position="fixed">File Name</ion-label>
+          </td>
+          <td>
+            <ion-label  class="colortd" position="fixed">qq.png</ion-label>
+          </td>
+        </tr>
+      </table>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button><ion-icon name="chevron-up-circle-outline"></ion-icon></ion-fab-button>
+    <ion-icon name="logo-facebook" class="social" style="margin-right:10px"  slot="end"></ion-icon>
+    <ion-fab-list side="top">
+      <ion-fab-button><ion-icon name="logo-linkedin"></ion-icon></ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>  <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+      </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="customer()">
+          <ion-icon color="primary" name="home-outline"></ion-icon>
+          <ion-label color="primary">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button  (click)="enquiry()">
+          <ion-icon name="people"></ion-icon>
+          <ion-label>Enquiry</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="report()">
+          <ion-icon name="settings-outline"  ></ion-icon>
+          <ion-label>Report</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    
+    </ion-tabs>
+</ion-toolbar>
+</ion-footer>

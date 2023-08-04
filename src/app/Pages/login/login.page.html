@@ -1,0 +1,28 @@
+<ion-content>
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" class="img2"/>
+  <ion-title style="text-align:center">Login</ion-title>
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <form [formGroup]="form" (submit)="Login()"  > 
+            <div padding>
+              <ion-item>
+                  <ion-input  type="text" placeholder="User Name"  formControlName="username" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input  type="text" placeholder="Password"  formControlName="password"  required></ion-input>
+                </ion-item>
+            </div>
+            <div padding>
+              <ion-button class="submitbtn" size="large" type="submit" expand="block">Login</ion-button>
+            </div>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid> 
+    <ion-item lines="none">
+      <ion-label  class="all" text-wrap> Create new account</ion-label>
+      <ion-button  size="large" type="submit" (click)="reg()" expand="block">Register</ion-button>
+    </ion-item>
+</ion-content>
+  

@@ -1,0 +1,125 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Enquiry</ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="signout()">
+          <ion-icon slot="icon-only" class="logout" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full"  style="--background:#edeff2">
+    <ion-label >Material</ion-label>
+  </ion-item>
+
+  <ion-item lines="none" class="ion-item12">
+    <ion-input type="text" placeholder="Material"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="ion-item12">
+    <ion-input type="text" placeholder="Material grid"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+
+  </ion-item>
+  <ion-item lines="none" class="ion-item12">
+    <ion-input type="text" placeholder="No of sheet"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+
+  </ion-item>
+  <ion-item lines="none" class="ion-item12">
+    <ion-input type="text" placeholder="No of sheet"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+
+  </ion-item>
+  <ion-item lines="none" class="ion-item12">
+    <ion-input type="text" placeholder="Thickness"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+
+  </ion-item>
+ 
+    
+<ion-accordion-group>
+  <ion-accordion value="shapes">
+    <ion-item slot="header" lines="full"  style="--background:#edeff2">
+      <ion-label >Process</ion-label>
+    </ion-item>
+    <ion-list slot="content">
+      <ion-item lines="none" class="ion-item12">
+        <ion-checkbox>   </ion-checkbox>
+        <ion-lable> Laser cutting </ion-lable>
+      </ion-item>
+      <ion-item lines="none" class="ion-item12">
+        <ion-checkbox>   </ion-checkbox>
+        <ion-lable> Bending </ion-lable>
+      </ion-item>
+      <ion-item lines="none" class="ion-item12">
+        <ion-checkbox>   </ion-checkbox>
+        <ion-lable> Powder coating </ion-lable>
+      </ion-item>
+      <ion-item lines="none" class="ion-item12">
+        <ion-checkbox>   </ion-checkbox>
+        <ion-lable> Machining </ion-lable>
+      </ion-item>
+      <ion-item lines="none" class="ion-item12">
+
+        <ion-checkbox>   </ion-checkbox>
+        <ion-lable> Grinding</ion-lable>
+      </ion-item>
+    </ion-list>
+  </ion-accordion>
+</ion-accordion-group> 
+<ion-item lines="full"  style="--background:#edeff2">
+  <ion-label>Row Material</ion-label>
+</ion-item>
+  <ion-item  lines="none">
+      <ion-radio-group style="width:100%">
+  <ion-item lines="none">
+          <ion-radio  style="margin-right:10px" value="cord"></ion-radio>
+          <ion-label>Given</ion-label>
+          <ion-radio  style="margin-right:10px" value="studebaker"></ion-radio>
+          <ion-label>Not Given</ion-label>
+        </ion-item>
+      </ion-radio-group>
+</ion-item>
+<ion-item lines="full"   style="--background:#edeff2">
+  <ion-label>Design</ion-label>
+</ion-item>
+<ion-item>
+
+  <ion-input type="file" placeholder="Description"  name="tan" autocomplete="off"   id="tan" required></ion-input>
+
+</ion-item>
+<ion-item>
+  <ion-textarea rows="6" cols="20" placeholder="Description"></ion-textarea>
+</ion-item>
+<div padding>
+  <ion-button icon-left size="medium" (click)="qt()"  expand="full" shape="round" color="primary" tappable>
+    Submit
+ </ion-button>    </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="customer()">
+          <ion-icon name="home"></ion-icon>
+          <ion-label >Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button  (click)="enquiry()">
+          <ion-icon   color="primary" name="home-outline" name="people-outline"></ion-icon>
+          <ion-label color="primary">Enquiry</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="report()">
+          <ion-icon name="settings-outline"  ></ion-icon>
+          <ion-label>Report</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    
+    </ion-tabs>
+</ion-toolbar>
+</ion-footer>
